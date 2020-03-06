@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Yelp-camp.iml" filepath="$PROJECT_DIR$/.idea/Yelp-camp.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/Web-Developer-Bootcamp/webdevbootcamp-master/YelpCamp/.idea/YelpCamp.iml" filepath="$USER_HOME$/Desktop/Web-Developer-Bootcamp/webdevbootcamp-master/YelpCamp/.idea/YelpCamp.iml" />
+      <module fileurl="file://$USER_HOME$/Desktop/Web-Developer-Bootcamp/yelp-camp-es6-master/.idea/yelp-camp-es6-master.iml" filepath="$USER_HOME$/Desktop/Web-Developer-Bootcamp/yelp-camp-es6-master/.idea/yelp-camp-es6-master.iml" />
+    </modules>
+  </component>
+</project>
