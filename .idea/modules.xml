@@ -3,8 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Yelp-camp.iml" filepath="$PROJECT_DIR$/.idea/Yelp-camp.iml" />
-      <module fileurl="file://$USER_HOME$/Desktop/Web-Developer-Bootcamp/webdevbootcamp-master/YelpCamp/.idea/YelpCamp.iml" filepath="$USER_HOME$/Desktop/Web-Developer-Bootcamp/webdevbootcamp-master/YelpCamp/.idea/YelpCamp.iml" />
-      <module fileurl="file://$USER_HOME$/Desktop/Web-Developer-Bootcamp/yelp-camp-es6-master/.idea/yelp-camp-es6-master.iml" filepath="$USER_HOME$/Desktop/Web-Developer-Bootcamp/yelp-camp-es6-master/.idea/yelp-camp-es6-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Desktop/Web-Developer-Bootcamp/webdevbootcamp-master/YelpCamp/.idea/YelpCamp.iml" filepath="$PROJECT_DIR$/../Desktop/Web-Developer-Bootcamp/webdevbootcamp-master/YelpCamp/.idea/YelpCamp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Desktop/Web-Developer-Bootcamp/webdevbootcamp-master/.idea/webdevbootcamp-master.iml" filepath="$PROJECT_DIR$/../Desktop/Web-Developer-Bootcamp/webdevbootcamp-master/.idea/webdevbootcamp-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Desktop/Web-Developer-Bootcamp/yelp-camp-es6-master/.idea/yelp-camp-es6-master.iml" filepath="$PROJECT_DIR$/../Desktop/Web-Developer-Bootcamp/yelp-camp-es6-master/.idea/yelp-camp-es6-master.iml" />
     </modules>
   </component>
 </project>

@@ -6,5 +6,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="yelp-camp-es6-master" />
     <orderEntry type="module" module-name="YelpCamp" />
+    <orderEntry type="module" module-name="webdevbootcamp-master" />
   </component>
 </module>
