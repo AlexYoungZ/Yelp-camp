@@ -47,7 +47,7 @@ app.post("/campgrounds", function (req, res) {
 
 //NEW - show form to create new campground
 app.get("/campgrounds/new", function (req, res) {
-  res.render("new.ejs");
+  res.render("campgrounds/new");
 });
 
 // SHOW - shows more info about one campground
@@ -59,7 +59,45 @@ app.get("/campgrounds/:id", function (req, res) {
     } else {
       console.log(foundCampground);
       //render show template with that campground
-      res.render("show",{campground: foundCampground});
+      res.render("campgrounds/show",{campground: foundCampground});
+    }
+  });
+});
+
+// ====================
+// COMMENTS ROUTES
+// ====================
+
+app.get("/campgrounds/:id/comments/new", function (req, res) {
+  // find campground by id
+  Campground.findById(req.params.id, function (err, campground) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("comments/new",{campground: campground});
+    }
+  });
+});
+
+app.post("/campgrounds/:id/comments", function (req, res) {
+  //lookup campground using ID
+  //create new comment
+  //connect new comment to campground
+  //redirect campground show page
+  Campground.findById(req.params.id, function (err, campground) {
+    if (err) {
+      console.log(err);
+      res.redirect("/campgrounds");
+    } else {
+      Comment.create(req.body.comment, function (err, comment) {
+        if (err) {
+          console.log(err);
+        } else {
+          campground.comments.push(comment);
+          campground.save();
+          res.redirect('/campgrounds/' + campground._id);
+        }
+      });
     }
   });
 });
@@ -67,6 +105,8 @@ app.get("/campgrounds/:id", function (req, res) {
 app.listen(3000, function () {
   console.log("The YelpCamp Server Has Started!");
 });
+
+
 
 
 
