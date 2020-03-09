@@ -109,6 +109,12 @@ SHOW    /dogs/:id  GET   Shows info about one dog
 #v7:
 
 ##Refactor The Routes
-* Use Express router to reoragnize all routes
+* Use Express router to reorganize all routes
+
+#v8:
+
+##Users + Comments
+* Associate users and comments
+* Save author's name to a comment automatically
 
 
