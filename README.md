@@ -117,4 +117,8 @@ SHOW    /dogs/:id  GET   Shows info about one dog
 * Associate users and comments
 * Save author's name to a comment automatically
 
+#v9:
 
+##Users + Campgrounds
+* Prevent an unauthenticated user from creating a campground
+* Save username+id to newly created campground
