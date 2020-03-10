@@ -161,6 +161,15 @@ Comment Destroy Route:    /campgrounds/:id/comments/:comment_id
 * Hide/Show edit and delete buttons
 * Refactor Middleware
 
+#v11:
+
+#Adding in Flash!
+* Demo working version
+* Install and configure connect-flash
+* Add bootstrap alerts to header
+
+
+
 * BOOTSTRAP NAV COLLPASE JS
 * Flash Messages
 * Refactor container div to header
