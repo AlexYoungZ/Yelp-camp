@@ -168,6 +168,9 @@ Comment Destroy Route:    /campgrounds/:id/comments/:comment_id
 * Install and configure connect-flash
 * Add bootstrap alerts to header
 
+#v12:
+
+#background_slider
 
 
 * BOOTSTRAP NAV COLLPASE JS

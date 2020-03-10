@@ -7,5 +7,6 @@
     <orderEntry type="module" module-name="yelp-camp-es6-master" />
     <orderEntry type="module" module-name="YelpCamp" />
     <orderEntry type="module" module-name="webdevbootcamp-master" />
+    <orderEntry type="library" name="modernizr" level="application" />
   </component>
 </module>
