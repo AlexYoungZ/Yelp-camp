@@ -168,9 +168,7 @@ Comment Destroy Route:    /campgrounds/:id/comments/:comment_id
 * Install and configure connect-flash
 * Add bootstrap alerts to header
 
-#v12:
-
-#background_slider
+# background_slider
  
 # Dynamic Price Feature - Yelp Camp
 
@@ -178,6 +176,23 @@ Comment Destroy Route:    /campgrounds/:id/comments/:comment_id
 - Add price to campground model as a String datatype
 - Add price to views/campgrounds/new.ejs and views/campgrounds/edit.ejs (new and edit forms)
 - Add price to views/camprounds/show.ejs (campground show page)
+
+#v11Deployed:
+
+heroku run ls
+
+#Environment variables
+* create environment variable 
+* export DATABASEURL=
+process.env.databaseURL
+set up process.env.databaseURL || default value
+
+# YelpCamp ES6 Refactor
+
+* Replace functions with arrow functions
+* Replace var with let or const
+* Destructure middleware
+* Replace string concatenation with template literals
 
 * BOOTSTRAP NAV COLLPASE JS
 * Flash Messages

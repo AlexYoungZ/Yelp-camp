@@ -1,21 +1,21 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-var campgroundSchema = new mongoose.Schema({
-  name:String,
+const campgroundSchema = new mongoose.Schema({
+  name: String,
   price: String,
-  image:String,
-  description:String,
-  author:{
-    id:{
-      type:mongoose.Schema.Types.ObjectId,
-      ref:"User"
+  image: String,
+  description: String,
+  author: {
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
     },
-    username:String
+    username: String
   },
-  comments:[
+  comments: [
     {
-      type:mongoose.Schema.Types.ObjectId,
-      ref:"Comment"
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment"
     }
   ]
 });
