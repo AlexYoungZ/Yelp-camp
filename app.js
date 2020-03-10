@@ -1,29 +1,43 @@
-const express         = require("express"),
-      app             = express(),
-      bodyParser      = require("body-parser"),
-      mongoose        = require("mongoose"),
-      Campground      = require("./models/campground"),
-      Comment         = require("./models/comment"),
-      seedDB          = require("./seeds"),
-      passport        = require("passport"),
-      LocalStrategy   = require("passport-local"),
-      User            = require("./models/user"),
-      methodOverride  = require("method-override"),
-      flash           = require("connect-flash");
+const express = require("express"),
+    app = express(),
+    bodyParser = require("body-parser"),
+
+    mongoose = require("mongoose"),
+    Campground = require("./models/campground"),
+    Comment = require("./models/comment"),
+    seedDB = require("./seeds"),
+    passport = require("passport"),
+    LocalStrategy = require("passport-local"),
+    User = require("./models/user"),
+    methodOverride = require("method-override"),
+    flash = require("connect-flash"),
+    cookiesParser = require('cookie-parser'),
+    session = require('express-session');
+
+// configure dotenv
+require('dotenv').config();
 
 //requiring routes
 const commentRoutes = require("./routes/comments"),
       campgroundRoutes = require("./routes/campgrounds"),
       indexRoutes = require("./routes/index");
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser: true,  useUnifiedTopology: true });
+// assign mongoose promise library and connect to database
+mongoose.Promise = global.Promise;
 
+const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/yelp_camp';
+
+mongoose.connect(databaseUri,{ useNewUrlParser: true, useUnifiedTopology: true  })
+    .then(()=>console.log(`Database connected`))
+    .catch(err=>console.log(`Database connection error:${err.message}`));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
-app.use(flash());
+// app.use(cookieParser('secret'));
+//require moment
+app.locals.moment = require('moment');
 // seedDB(); //seed the database
 
 // PASSPORT CONFIGURATION
@@ -32,6 +46,8 @@ app.use(require("express-session")({
   resave:false,
   saveUninitialized: false
 }));
+
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));

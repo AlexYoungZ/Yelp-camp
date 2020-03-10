@@ -10,16 +10,19 @@ router.get('/', (req, res)=> {
 
 // show register form
 router.get('/register',  (req, res) =>{
-  res.render("register");
+  res.render("register",{page: 'register'});
 });
 
 //handle sign up logic
 router.post("/register",  (req, res)=> {
   const newUser = new User({username: req.body.username});
+  if (req.body.adminCode === process.env.ADMIN_CODE) {
+    newUser.isAdmin = true;
+  }
   User.register(newUser, req.body.password, function (err, user) {
     if (err) {
-      req.flash("error", err.message);
-      return res.render("register");
+      console.log(err);
+      return res.render("register",{error:err.message});
     }
     passport.authenticate("local")(req, res, () => {
       req.flash("success", "Welcome to YelpCamp" + user.username);
@@ -30,21 +33,23 @@ router.post("/register",  (req, res)=> {
 
 // show login form
 router.get("/login",  (req, res)=> {
-  res.render("login");
+  res.render("login",{page:'login'});
 });
 
 // handling login logic
 router.post("/login", passport.authenticate("local",
     {
       successRedirect: "/campgrounds",
-      failureRedirect: "/login"
+      failureRedirect: "/login",
+      failureFlash:true,
+      successFlash: 'Welcome to YelpCamp!'
     }),  (req, res)=> {
 });
 
 // logout route
 router.get("/logout",  (req, res) =>{
   req.logout();
-  req.flash("success", "Logged you out!");
+  req.flash("success", "See you later");
   res.redirect("/campgrounds");
 });
 
