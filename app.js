@@ -25,7 +25,7 @@ const commentRoutes = require("./routes/comments"),
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
 
-const databaseUri = "mongodb+srv://alexyoungz:zhangsiyang!1@cluster0-koedh.mongodb.net/test?retryWrites=true&w=majority";
+const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost/yelp_camp';
 
 mongoose.connect(databaseUri,{ useNewUrlParser: true, useUnifiedTopology: true  })
     .then(()=>console.log(`Database connected`))
@@ -65,7 +65,7 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(3000, function () {
+app.listen(process.env.PORT, process.env.IP, function(){
   console.log("The YelpCamp Server Has Started!");
 });
 
